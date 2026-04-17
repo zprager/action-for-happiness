@@ -1,0 +1,57 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/actionfh
+      JWT_SECRET: dev-secret-change-me
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      MAIL_FROM: no-reply@actionfh.local
+      APP_URL: http://localhost:3000
+      CRON_SECRET: dev-cron-secret-change-me
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - mongo
+      - mailpit
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  cron:
+    image: alpine:3.20
+    restart: unless-stopped
+    depends_on:
+      - web
+    environment:
+      CRON_SECRET: dev-cron-secret-change-me
+    command: >
+      sh -c "apk add --no-cache curl tzdata &&
+             echo '0 9 * * * curl -fsS -X POST -H \"x-cron-secret: $$CRON_SECRET\" http://web:3000/api/cron/daily-checkin >> /var/log/cron.log 2>&1' > /etc/crontabs/root &&
+             crond -f -l 8"
+
+  mailpit:
+    image: axllent/mailpit
+    container_name: mailpit
+    restart: unless-stopped
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    environment:
+      MP_MAX_MESSAGES: 5000
+      MP_DATABASE: /data/mailpit.db
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+    volumes:
+      - mailpit-data:/data
+
+volumes:
+  mongo-data:
+  mailpit-data:

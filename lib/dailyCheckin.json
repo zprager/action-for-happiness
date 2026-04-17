@@ -1,0 +1,63 @@
+{
+  "_id": "66a1f0e8b8f2a7c9d1234567",
+  "slug": "daily-checkin-v1",
+  "title": "Your Daily Check-In",
+  "subtitle": "A gentle two minutes for you.",
+  "version": 1,
+  "createdAt": "2026-04-17T06:00:00.000Z",
+  "updatedAt": "2026-04-17T06:00:00.000Z",
+  "steps": [
+    {
+      "_id": "66a1f0e8b8f2a7c9d1234568",
+      "order": 1,
+      "key": "breathe",
+      "kind": "breathe",
+      "eyebrow": "Step 1 of 4",
+      "title": "Take three calm, deep breaths",
+      "prompt": "Follow the circle. Breathe in as it grows, and out as it softens.",
+      "cta": "I'm ready",
+      "durationSeconds": 18
+    },
+    {
+      "_id": "66a1f0e8b8f2a7c9d1234569",
+      "order": 2,
+      "key": "reflect",
+      "kind": "textarea",
+      "eyebrow": "Step 2 of 4",
+      "title": "How are you feeling right now?",
+      "prompt": "No judgement. Just notice what's here — a word, a sentence, a feeling.",
+      "placeholder": "Right now I feel…",
+      "cta": "Continue",
+      "minLength": 1
+    },
+    {
+      "_id": "66a1f0e8b8f2a7c9d123456a",
+      "order": 3,
+      "key": "gratitude",
+      "kind": "textarea",
+      "eyebrow": "Step 3 of 4",
+      "title": "What's one thing you're grateful for today?",
+      "prompt": "However small. A warm drink, someone's smile, a quiet moment on the way to work.",
+      "placeholder": "Today I'm grateful for…",
+      "cta": "Continue",
+      "minLength": 1
+    },
+    {
+      "_id": "66a1f0e8b8f2a7c9d123456b",
+      "order": 4,
+      "key": "intention",
+      "kind": "textarea",
+      "eyebrow": "Step 4 of 4",
+      "title": "One small intention to brighten today?",
+      "prompt": "A tiny action — a walk, a kind message, a deep breath before your next meeting.",
+      "placeholder": "Today I'll…",
+      "cta": "Complete my check-in",
+      "minLength": 1
+    }
+  ],
+  "completion": {
+    "eyebrow": "All done",
+    "title": "Beautifully done.",
+    "body": "That's your check-in for today. Small actions, happier days — see you tomorrow."
+  }
+}

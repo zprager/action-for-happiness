@@ -1,0 +1,67 @@
+.card {
+  background: linear-gradient(135deg, #fff7d9 0%, #ffe7a3 100%);
+  border: 1px solid #f1d77a;
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.flame {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 65%, #ffb347 0%, #ff7a1a 70%);
+  border-radius: 50%;
+  box-shadow: 0 8px 22px rgba(255, 122, 26, 0.35);
+  color: white;
+}
+
+.flame svg {
+  width: 40px;
+  height: 40px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.number {
+  font-size: clamp(36px, 6vw, 48px);
+  font-weight: 800;
+  color: var(--brand-ink);
+  line-height: 1;
+}
+
+.label {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+  font-weight: 800;
+  opacity: 0.75;
+}
+
+.caption {
+  color: var(--brand-ink);
+  font-size: 15px;
+  margin-top: 6px;
+  opacity: 0.85;
+}
+
+.skeleton {
+  color: var(--ink-muted);
+  font-size: 15px;
+}
+
+.zero .flame {
+  background: radial-gradient(circle at 50% 65%, #c9d2cc 0%, #8c988f 70%);
+  box-shadow: none;
+}

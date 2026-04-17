@@ -1,0 +1,153 @@
+.shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 28px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--brand-ink);
+}
+
+.brandDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--brand);
+  display: inline-block;
+  transform: translateY(-1px);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.eyebrow {
+  color: var(--brand);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--brand-ink);
+}
+
+.input {
+  font: inherit;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(0, 166, 81, 0.15);
+}
+
+.button {
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  background: var(--brand);
+  color: white;
+  border: none;
+  padding: 13px 18px;
+  border-radius: 999px;
+  margin-top: 8px;
+  transition: background 120ms ease, transform 80ms ease;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--brand-dark);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.error {
+  background: #fdecea;
+  color: var(--danger);
+  border: 1px solid #f5c6c1;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.success {
+  background: #e6f7ee;
+  color: var(--brand-dark);
+  border: 1px solid #bfe6d0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 20px;
+  color: var(--ink-muted);
+  font-size: 14px;
+  text-align: center;
+}
